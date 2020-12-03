@@ -1,73 +1,28 @@
 <!DOCTYPE html>
 <html>
+    <head>
+    <link rel='stylesheet' href='style/styles.css'>
+    </head>
     <body>
-    <script>
-        function computerPlay() {
-            arr = ['Rock', 'Paper', 'Scissors']
-            randIndex = Math.floor(Math.random() * arr.length);
-            compChoice = arr[randIndex]
-            return compChoice
-        }
-        function playRound(playerChoice, compChoice) {
-            playerChoice = playerChoice.toLowerCase()
-            compChoice = compChoice.toLowerCase()
-            if (playerChoice === 'rock') {
-                if (compChoice === 'rock') {
-                    console.log('Tie!')
-                }
-                else if (compChoice === 'paper') {
-                    console.log('You lose! Paper beats rock')
-                    return 'c'
-                }
-                else {
-                    console.log('You win! Rock beats scissors')
-                    return 'p'
-                }
-            }
-            else if (playerChoice === 'paper') {
-                if (compChoice === 'rock') {
-                    console.log('You win! Paper beats rock')
-                    return 'p'
-                }
-                else if (compChoice === 'paper') {
-                    console.log('Tie!')
-                }
-                else {
-                    console.log('You lose! Scissors beat paper')
-                    return 'c'
-                }
-            }
-            else if (playerChoice === 'scissors') {
-                if (compChoice === 'rock') {
-                    console.log('You lose! Rock beats scissors')
-                    return 'c'
-                }
-                else if (compChoice === 'paper') {
-                    console.log('You win! Scissors beats paper')
-                    return 'p'
-                }
-                else {
-                    console.log('Tie!')
-                }
-            }
-        }
-        function game() {
-            let playerScore = 0;
-            let compScore = 0;
-            for (i = 0; i < 5; i++) {
-                var playerChoice = prompt('Rock, paper, or scissors?');
-                score = playRound(playerChoice, computerPlay())
-                if (score === 'p') {
-                    playerScore++
-                }
-                else if (score === 'c') {
-                    compScore++
-                }
-                console.log(`Your score: ${playerScore}     Computer Score: ${compScore}`)
-
-            }
-        }
-        console.log(game())
-    </script>
+        <div id='container'>
+            <div class='btn-group'>
+                <div>
+                    <button id='rock' class='button'>Rock</button>
+                </div>
+                <div>
+                    <button id='paper' class='button'>Paper</button>
+                </div>
+                <div>
+                    <button id='scissors' class='button'>Scissors</button>
+                </div>
+            </div>
+            <div id='scoreboard'>
+            </div>
+            <div id='endgame' class='disappear'>
+                <button id='reset' class='disappear'>Play again</button>
+            </div>
+        </div>
     </body>
+    <script src='script/script.js'></script>
 </html>
+                        
